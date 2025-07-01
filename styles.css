@@ -9,6 +9,9 @@ header {
   color: #fff;
   padding: 20px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer {
@@ -144,6 +147,7 @@ form button:hover {
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 10px 0;
   padding: 10px;
 }
@@ -164,11 +168,63 @@ form button:hover {
   color: #fff;
 }
 
+.header-buttons button {
+  background-color: #53964a;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-left: 10px;
+}
+
+.header-buttons button.logout {
+  background-color: #e74c3c;
+}
+
+.header-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Melhorias nos botões da lista de jogos */
+#games-list li .edit-btn {
+  background-color: #3498db; /* Azul */
+  color: white;
+}
+#games-list li .edit-btn:hover {
+  background-color: #2980b9;
+}
+
+#games-list li .delete-btn {
+  background-color: #e74c3c; /* Vermelho */
+  color: white;
+}
+#games-list li .delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Span para info do jogo */
+#games-list li span {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
 /* Media Queries */
 @media (max-width: 800px) {
   header,
   footer {
     padding: 15px;
+  }
+  
+  /* Ajuste para o header flexível em telas menores */
+  header {
+    flex-direction: column;
+  }
+  
+  .header-buttons {
+    margin-top: 15px;
   }
 
   h2 {
@@ -188,6 +244,10 @@ form button:hover {
   h2 {
     font-size: 18px;
   }
+  
+  header h1 {
+    font-size: 24px;
+  }
 
   #login-section button {
     font-size: 14px;
@@ -204,10 +264,15 @@ form button:hover {
     flex-direction: column;
     align-items: flex-start;
   }
+  
+  #games-list li div { /* Container dos botões */
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+  }
 
   #games-list li button {
     width: 100%;
     margin-top: 5px;
   }
 }
-
