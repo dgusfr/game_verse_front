@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Jogo - GameVerse Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GameVerse Store</h1>
+        <div class="header-buttons">
+             <button onclick="window.location.href='index.html'">Voltar para Home</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2 id="form-title">Adicionar Novo Game</h2>
+            <form id="game-form">
+                <input type="hidden" id="gameId" name="gameId"> <label for="title">Título:</label>
+                <input type="text" id="title" name="title" placeholder="Título do Jogo" required><br>
+                <label for="year">Ano:</label>
+                <input type="number" id="year" name="year" placeholder="Ano de Lançamento" required><br>
+                <label for="price">Preço:</label>
+                <input type="number" id="price" name="price" placeholder="Preço" step="0.01" required><br>
+                <button type="button" id="submit-button" onclick="handleFormSubmit()">Salvar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Loja de Games. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/manage-game.js"></script>
+</body>
+</html>
