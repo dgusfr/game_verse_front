@@ -3,9 +3,11 @@
 function loadGames() {
     axios.get(`${apiBaseUrl}/games`, getAxiosConfig())
         .then((response) => {
-            const games = response.data;
+            // Acessamos a propriedade 'data' dentro da resposta da API
+            const games = response.data.data; // <<-- AJUSTE AQUI
+            
             const list = document.getElementById("games-list");
-            list.innerHTML = ""; // Limpa a lista antes de adicionar os novos itens
+            list.innerHTML = ""; 
 
             if (games.length === 0) {
                 list.innerHTML = "<li>Nenhum jogo cadastrado.</li>";
